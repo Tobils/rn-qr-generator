@@ -10,7 +10,7 @@ import React from "react";
 
 import { SafeAreaView } from "react-native";
 
-import QrgeneratorPage from "./pages/qr/generate/qr.scanner.page";
+import QrgeneratorPage from "./pages/qr/generate/qr.genarator.page";
 
 const App = () => {
   return (

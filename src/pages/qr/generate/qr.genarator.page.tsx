@@ -10,7 +10,7 @@ import {
 import React, { useEffect } from "react";
 import QRCode from "react-native-qrcode-svg";
 import useViewModel from "./view.model";
-import { QrScannerStyles } from "./qr.scanner.style";
+import { QrScannerStyles } from "./qr.genarator.style";
 
 var { width, height } = Dimensions.get("window");
 
