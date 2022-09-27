@@ -1,16 +1,16 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-var {width, height} = Dimensions.get('window');
+var { width, height } = Dimensions.get("window");
 
 export const QrScannerStyles = StyleSheet.create({
   container: {
-    margin: 20
+    margin: 20,
   },
-  mainCard:{
-    backgroundColor: 'white', 
-    padding: 35, 
-    borderRadius: 20,  
-    shadowColor: '#000',
+  mainCard: {
+    backgroundColor: "white",
+    padding: 35,
+    borderRadius: 20,
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -19,35 +19,35 @@ export const QrScannerStyles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 15,
   },
-  logo:{
-    borderWidth: 1, 
+  logo: {
+    borderWidth: 1,
     marginTop: 10,
-    marginBottom: 25, 
-    justifyContent: 'center', 
-    padding: 20, 
-    borderRadius: 10
+    marginBottom: 25,
+    justifyContent: "center",
+    padding: 20,
+    borderRadius: 10,
   },
-  list:{
+  list: {
     marginVertical: 2,
-    justifyContent: 'center',
-    paddingLeft: 5
+    justifyContent: "center",
+    paddingLeft: 5,
   },
-  qrcodeWrapper:{
+  qrcodeWrapper: {
     alignItems: "center",
   },
-  qrcode:{
-    padding: 15, 
+  qrcode: {
+    padding: 15,
     borderWidth: 1,
-    borderRadius: 15
+    borderRadius: 15,
   },
-  cardInput:{
-    justifyContent: 'flex-end',
-    alignContent:'flex-end',
+  cardInput: {
+    justifyContent: "flex-end",
+    alignContent: "flex-end",
     padding: 20,
     borderRadius: 20,
-    flexDirection: 'column', 
+    flexDirection: "column",
     margin: 10,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
   input: {
     height: 40,
@@ -55,22 +55,22 @@ export const QrScannerStyles = StyleSheet.create({
     padding: 10,
     marginVertical: 3,
     borderRadius: 8,
-    color:'black'
+    color: "black",
   },
   overlay: {
     flex: 1,
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: 0,
     opacity: 0.5,
-    backgroundColor: 'black',
+    backgroundColor: "black",
     width: width,
-    height: height
+    height: height,
   },
   centeredView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 10,
   },
   button: {
@@ -80,16 +80,16 @@ export const QrScannerStyles = StyleSheet.create({
     marginHorizontal: 5,
   },
   buttonPrimary: {
-    backgroundColor: '#3D8DA6',
+    backgroundColor: "#3D8DA6",
   },
   buttonOutline: {
     borderWidth: 3,
-    borderColor: '#F49838',
-    backgroundColor: '#fff',
+    borderColor: "#F49838",
+    backgroundColor: "#fff",
   },
   buttonText: {
-    color: '#F49838',
-    textAlign:'center',
-    textTransform:'uppercase'
+    color: "#F49838",
+    textAlign: "center",
+    textTransform: "uppercase",
   },
-})
+});

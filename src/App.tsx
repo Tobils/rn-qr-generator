@@ -6,14 +6,11 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React from "react";
 
+import { SafeAreaView } from "react-native";
 
-import {
-  SafeAreaView,
-} from 'react-native';
-
-import QrgeneratorPage from './pages/qr/generate/qr.scanner.page';
+import QrgeneratorPage from "./pages/qr/generate/qr.scanner.page";
 
 const App = () => {
   return (
