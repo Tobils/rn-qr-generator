@@ -13,12 +13,12 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import QrScannerPage from './pages/qr/generate/qr.scanner.page';
+import QrgeneratorPage from './pages/qr/generate/qr.scanner.page';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <QrScannerPage />
+      <QrgeneratorPage />
     </SafeAreaView>
   );
 };

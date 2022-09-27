@@ -1,12 +1,13 @@
-import { Dimensions, KeyboardAvoidingView, Modal, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Modal, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useEffect } from 'react'
 import QRCode from 'react-native-qrcode-svg'
 import useViewModel from './view.model'
+import { QrScannerStyles } from './qr.scanner.style'
 
 var {width, height} = Dimensions.get('window');
 
 
-const QrScannerPage = () => {
+const QrGeneratorPage = () => {
   const {
     saveQrToDisk,
     name, 
@@ -30,24 +31,24 @@ const QrScannerPage = () => {
   } = useViewModel()
 
   return (
-    <View style={[styles.container]}>
-      <ScrollView style={styles.mainCard}>
-        <View style={styles.logo}>
+    <View style={[QrScannerStyles.container]}>
+      <ScrollView style={QrScannerStyles.mainCard}>
+        <View style={QrScannerStyles.logo}>
           <Text style={{textAlign: 'center', color:'grey'}}>LOGO</Text>
         </View>
         <View style={{marginVertical: 10}}>
-          <View style={styles.list}>
+          <View style={QrScannerStyles.list}>
             <Text style={{ fontSize: 20, fontWeight: '600', color:'#3D8DA6' }}>Collaborative Growth</Text>
           </View>
-          <View style={styles.list}>
+          <View style={QrScannerStyles.list}>
             <Text style={{ fontSize: 20, fontWeight: '600', color:'#3D8DA6' }}>Openness & Trustworthy</Text>
           </View>
-          <View style={styles.list}>
+          <View style={QrScannerStyles.list}>
             <Text style={{ fontSize: 20, fontWeight: '600', color:'#3D8DA6' }}>Excelent</Text>
           </View>
         </View>
-        <View style={styles.qrcodeWrapper}>
-          <View style={styles.qrcode}>
+        <View style={QrScannerStyles.qrcodeWrapper}>
+          <View style={QrScannerStyles.qrcode}>
           {
               name ? 
               <QRCode
@@ -68,19 +69,19 @@ const QrScannerPage = () => {
         
         <View style={{marginTop: 25, justifyContent: 'center', flexDirection:'column'}}>
           <TouchableOpacity
-            style={[styles.button, styles.buttonPrimary]}
+            style={[QrScannerStyles.button, QrScannerStyles.buttonPrimary]}
             onPress={() => setShowModal(true)}
             >
             <Text style={{color:'white', justifyContent:'center', textAlign: 'center', textTransform: 'uppercase', paddingVertical: 5}}>Input Data</Text>
           </TouchableOpacity>
           <View style={{height: 10}} />
           <TouchableOpacity
-            style={[styles.button, styles.buttonOutline]}
+            style={[QrScannerStyles.button, QrScannerStyles.buttonOutline]}
             onPress={() => {
               saveQrToDisk()
             }}
             >
-            <Text style={styles.buttonText}>SAVE QR</Text>
+            <Text style={QrScannerStyles.buttonText}>SAVE QR</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -90,17 +91,17 @@ const QrScannerPage = () => {
         transparent={true}
         visible={showModal}
       >
-          <View style={[styles.overlay, {height: height}]} />
-          <View style={styles.cardInput}>
+          <View style={[QrScannerStyles.overlay]} />
+          <View style={QrScannerStyles.cardInput}>
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setName}
               value={name}
               placeholder={'name'}
               placeholderTextColor={'grey'}
             />
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setEmail}
               value={email}
               placeholder={'email'}
@@ -108,28 +109,28 @@ const QrScannerPage = () => {
               placeholderTextColor={'grey'}
             />
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setRole}
               value={role}
               placeholder={'jabatan'}
               placeholderTextColor={'grey'}
             />
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setPosition}
               value={position}
               placeholder={'posisi'}
               placeholderTextColor={'grey'}
             />
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setDepartemen}
               value={departemen}
               placeholder={'departemen'}
               placeholderTextColor={'grey'}
             />
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setPhone}
               value={phone}
               placeholder={'nomor hp'}
@@ -137,7 +138,7 @@ const QrScannerPage = () => {
               placeholderTextColor={'grey'}
             />
             <TextInput
-              style={styles.input}
+              style={QrScannerStyles.input}
               onChangeText={setAddress}
               value={address}
               placeholder={'address'}
@@ -146,7 +147,7 @@ const QrScannerPage = () => {
 
             <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
               <TouchableOpacity
-                style={[styles.button, styles.buttonOutline]}
+                style={[QrScannerStyles.button, QrScannerStyles.buttonOutline]}
                 onPress={() => {
                   setAddress('')
                   setPhone('')
@@ -157,10 +158,10 @@ const QrScannerPage = () => {
                   setName('')
                 }}
                 >
-                  <Text style={styles.buttonText}>CLEAR</Text>
+                  <Text style={QrScannerStyles.buttonText}>CLEAR</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[styles.button, styles.buttonPrimary]}
+                style={[QrScannerStyles.button, QrScannerStyles.buttonPrimary]}
                 onPress={() => setShowModal(!showModal)}
                >
                 <Text style={{color:'white', justifyContent:'center', marginVertical: 5, textTransform: 'uppercase'}}>Save</Text>
@@ -172,95 +173,4 @@ const QrScannerPage = () => {
   )
 }
 
-export default QrScannerPage
-
-const styles = StyleSheet.create({
-  container: {
-    margin: 20
-  },
-  mainCard:{
-    backgroundColor: 'white', 
-    padding: 35, 
-    borderRadius: 20,  
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 15,
-  },
-  logo:{
-    borderWidth: 1, 
-    marginTop: 10,
-    marginBottom: 25, 
-    justifyContent: 'center', 
-    padding: 20, 
-    borderRadius: 10
-  },
-  list:{
-    marginVertical: 2,
-    justifyContent: 'center',
-    paddingLeft: 5
-  },
-  qrcodeWrapper:{
-    alignItems: "center",
-  },
-  qrcode:{
-    padding: 15, 
-    borderWidth: 1,
-    borderRadius: 15
-  },
-  cardInput:{
-    justifyContent: 'flex-end',
-    alignContent:'flex-end',
-    padding: 20,
-    borderRadius: 20,
-    flexDirection: 'column', 
-    margin: 10,
-    backgroundColor: 'white'
-  },
-  input: {
-    height: 40,
-    borderWidth: 1,
-    padding: 10,
-    marginVertical: 3,
-    borderRadius: 8,
-    color:'black'
-  },
-  overlay: {
-    flex: 1,
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    opacity: 0.5,
-    backgroundColor: 'black',
-    width: width,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  button: {
-    paddingVertical: 5,
-    paddingHorizontal: 50,
-    borderRadius: 50,
-    marginHorizontal: 5,
-  },
-  buttonPrimary: {
-    backgroundColor: '#3D8DA6',
-  },
-  buttonOutline: {
-    borderWidth: 3,
-    borderColor: '#F49838',
-    backgroundColor: '#fff',
-  },
-  buttonText: {
-    color: '#F49838',
-    textAlign:'center',
-    textTransform:'uppercase'
-  },
-})
+export default QrGeneratorPage
